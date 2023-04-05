@@ -10,20 +10,20 @@ export default function Home() {
   const signUp = async (e: React.SyntheticEvent) => {
     e.preventDefault();
     try {
-      const restul = await axios.post("https://mrtqvz6k34.execute-api.us-east-1.amazonaws.com/dev/signUp", { email: email, password: password });
+      const restul = await axios.post("https://uvyf5him61.execute-api.us-east-1.amazonaws.com/dev/signUp", { email: email, password: password });
       console.log(restul.data);
     } catch (error) {
-      console.log(error);
+      console.log(error.response.data);
     }
   };
 
   const signIn = async (e: React.SyntheticEvent) => {
     e.preventDefault();
     try {
-      const restul = await axios.post("https://mrtqvz6k34.execute-api.us-east-1.amazonaws.com/dev/signIn", { email: email, password: password });
+      const restul = await axios.post("https://uvyf5him61.execute-api.us-east-1.amazonaws.com/dev/signIn", { email: email, password: password });
       router.push("/uploud");
     } catch (error) {
-      console.log(error);
+      console.log(error.response);
     }
   };
 
